@@ -22,8 +22,8 @@ CapySwap is a Web App that serves as an exchange between Ether (ETH) and CapyBuc
 
 * [Truffle](https://trufflesuite.com/) - Used to simplify development, compilation, testing and smart contract deploying on the blockchain.
 * [Solidity](https://docs.soliditylang.org/en/v0.8.19/) - Used for Smart Contracts development.
-* [Javascript](developer.mozilla.org/it/docs/Web/JavaScript) - Used to test and for GUI interactions.
+* [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) - Used to test and for GUI interactions.
 * [Lite-server](https://github.com/johnpapa/lite-server/) - Web server.
-* [Ganache](https://www.thymeleaf.org/) - Used to simulate the Ethereum blockchain.
+* [Ganache](https://trufflesuite.com/ganache/) - Used to simulate the Ethereum blockchain.
 
 
