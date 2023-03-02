@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.8.1",
+    "chai": "^4.3.7"
+  },
+  "name": "capy-swap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "dev": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@openzeppelin/test-helpers": "^0.5.16",
+    "lite-server": "^2.6.1"
+  }
+}

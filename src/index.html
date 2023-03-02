@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>CapySwap</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+      @font-face { font-family: Sunnyspells; src: url(fonts/Sunnyspells.woff2); } 
+      h1 {
+          font-family: Sunnyspells;
+          font-size: 100px;
+      }
+      html{
+        font-size:16px;
+        font-variant:none;
+        font-smooth:always;
+        -webkit-font-smoothing:antialiased;
+        -moz-osx-font-smoothing:grayscale;
+        -webkit-tap-highlight-color:transparent;
+        background:linear-gradient(180deg,#202738 0,#070816 100%)
+      }
+      #root,body,html{
+        min-height:100%
+      }
+      .Swap {
+            position: relative;
+            background: rgb(13, 17, 28);
+            border-radius: 16px;
+            border: 1px solid rgb(27, 34, 54);
+            padding: 8px;
+            z-index: 1;
+            transition: transform 250ms ease 0s;
+      }
+      .swapForm {
+          position: relative;
+          background-color: rgb(19, 26, 42);
+          border-radius: 12px;
+          padding: 16px;
+          color: rgb(255, 255, 255);
+          font-size: 14px;
+          line-height: 20px;
+          font-weight: 500;
+          opacity: 1;
+          transition: opacity 0.2s ease-in-out 0s;
+          text-align: left;
+          font-size: 36px;
+          line-height: 44px;
+          font-variant: small-caps;
+          flex: 1 1 auto;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;   
+      }
+      .scambiaLabel {
+          padding: 8px 12px;
+          margin-bottom: 8px;
+          width: 100%;
+          color: rgb(255, 255, 255);
+      }
+      .swapButton {
+          inset: 0px;
+          border-radius: inherit;
+          height: 40%;
+          position: relative;
+          transition: background-color 150ms ease 0s;
+          width: 40%;
+          border-radius: 16px;
+          margin: 15px;
+          background-color: rgba(76, 130, 251, 0.24);
+          color: rgb(76, 130, 251);
+          font-size: 18px;
+          font-weight: 600;
+          text-align: center;
+      }
+      .currencyButton {
+          -webkit-box-align: center;
+          align-items: center;
+          background-color: rgb(41, 50, 73);
+          opacity: 1;
+          box-shadow: none;
+          color: rgb(255, 255, 255);
+          cursor: pointer;
+          height: unset;
+          border-radius: 16px;
+          outline: none;
+          user-select: none;
+          border: none;
+          font-size: 24px;
+          font-weight: 400;
+          width: initial;
+          padding: 4px 8px 4px 4px;
+          gap: 8px;
+          -webkit-box-pack: justify;
+          justify-content: space-between;
+          margin-left: 12px;
+          visibility: visible;
+          margin: 0px;
+          box-sizing: border-box;
+          min-width: 0px;
+          position: relative;
+          z-index: 1;
+          will-change: transform;
+          transition: transform 450ms ease 0s;
+          transform: perspective(1px) translateZ(0px);
+      }
+      .swapLine {
+          border-radius: 12px;
+          height: 40px;
+          width: 40px;
+          position: relative;
+          background-color: rgb(41, 50, 73);
+          border: 4px solid rgb(255, 255, 255);
+          z-index: 2;
+          margin: auto;
+      }
+      .innerLine {
+          display: inline-flex;
+          -webkit-box-align: center;
+          align-items: center;
+          -webkit-box-pack: center;
+          justify-content: center;
+          width: 100%;
+          height: 100%;
+      }
+    </style>
+  </head>
+  <body class="container mt-5  text-white"  style="background-color: transparent;">  
+    <div class="container mt-5" >
+      <h1 class="text-center"><img src="images/capyminimal.png" width="85" height="80"></img>CapySwap</h1>
+      <form class="mx-auto w-50">
+        <div class="Swap">
+          <div id="buy">
+            <div class="form-group Swap">
+              <div class="scambiaLabel">
+                <label for="amountToBuy">Swap</label>
+              </div>
+              <div class="input-group">
+                <input type="text" class="form-control swapForm" id="amountToBuy" value="0"></input>
+                <div class="input-group-append">
+                  <button class="btn btn-default currencyButton" id="etherButton-buy" type="select"><img src="images/ethlogo.png" width="47" height="47"></img>  <b>ETH &blacktriangledown;</b></button>
+                </div>
+              </div>
+              <div class="swapLine mb-1 mt-1" >
+                <div class="innerLine">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5D6785" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+                </div>
+              </div>
+              <div class="input-group mb-3">
+                <input type="text" class="form-control swapForm" id="buyPreview" value="0">
+                <div class="input-group-append">
+                  <button class="btn btn-default currencyButton" id="capyButton-buy" type="button"><img src="images/CapyCoin.png" width="60" height="55"></img><b>CPB &blacktriangle;</b></button>
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-default btn-buy swapButton" id="swapButton-buy" type="button" hidden>Scambia</button>
+          </div>
+
+          <div id="sell" hidden>
+            <div class="form-group Swap">
+              <div class="scambiaLabel">
+               <label for="amountToBuy">Swap</label>
+              </div>
+              <div class="input-group">
+                <input type="text" class="form-control swapForm" id="amountToSell" value="0"></input>
+                <div class="input-group-append">
+                  <button class="btn btn-default currencyButton" id="capyButton-sell" type="button"><img src="images/CapyCoin.png" width="60" height="55"></img><b>CPB &blacktriangledown;</b></button>
+                </div>
+              </div>
+    
+              <div class="swapLine mb-1 mt-1" >
+                <div class="innerLine">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5D6785" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+                </div>
+              </div>
+              <div class="input-group mb-3">
+                <input type="text" class="form-control swapForm" id="sellPreview" value="0">
+                <div class="input-group-append">
+                  <button class="btn btn-default currencyButton" id="etherButton-sell" type="select"><img src="images/ethlogo.png" width="47" height="47"></img><b>ETH &blacktriangle;</b></button>
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-default btn-sell  swapButton" id="swapButton-sell" type="button" hidden>Scambia</button>
+          </div>
+          <button class="btn btn-default swapButton connect-wallet" id="connect-wallet" type="button">Connetti Portafoglio</button>
+      </div>
+    </div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("#etherButton-buy").click(function(){
+            event.preventDefault();
+            $('#sell').removeAttr('hidden');
+            $('#buy').attr("hidden",true);
+        }); 
+        $("#capyButton-buy").click(function(){
+            event.preventDefault();
+            $('#sell').removeAttr('hidden');
+            $('#buy').attr("hidden",true);
+        }); 
+        $("#etherButton-sell").click(function(){
+            event.preventDefault();
+            $('#buy').removeAttr('hidden');
+            $('#sell').attr("hidden",true);
+        }); 
+        $("#capyButton-sell").click(function(){
+            event.preventDefault();
+            $('#buy').removeAttr('hidden');
+            $('#sell').attr("hidden",true);
+        }); 
+      });
+    </script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
+
+
