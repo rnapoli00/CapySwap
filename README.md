@@ -8,7 +8,7 @@
 
 # Project Description 
 
-CapySwap is a Web App that serves as an exchange between Ether (ETH) and CapyBuck (CPB) <img src = "capybuck.png" width = "35" heigth = "45">, a new Cryptocurrency based on the notorious animal from South America: the capybara. CapySwap creates a new online trading experience by letting users buy and sell CapyBucks using a simple interface only.
+CapySwap is a Web App that serves as an exchange between Ether (ETH) and CapyBuck (CPB) <img src = "/src/images/CapyBuck.png" width = "35" heigth = "45">, a new Cryptocurrency based on the notorious animal from South America: the capybara. CapySwap creates a new online trading experience by letting users buy and sell CapyBucks using a simple interface only.
 
 
 ## Authors
